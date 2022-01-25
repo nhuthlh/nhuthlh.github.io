@@ -1,6 +1,7 @@
 const delayedColorChange = (newColor, delay, doNext) => {
     setTimeout(() => {
         document.body.style.backgroundColor = newColor;
+        console.log(newColor);
         doNext && doNext();
     }, delay);
 }
