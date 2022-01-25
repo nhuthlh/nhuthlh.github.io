@@ -5,7 +5,7 @@ const delayedColorChange = (newColor, delay, doNext) => {
         doNext && doNext();
     }, delay);
 }
-
+//callback
 delayedColorChange('red', 1000, () => {
     delayedColorChange('blue', 1000, () => {
         delayedColorChange('green', 1000, () => {
