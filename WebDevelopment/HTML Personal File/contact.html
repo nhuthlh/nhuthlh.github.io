@@ -11,12 +11,16 @@
     <p>My address</p>
     <p>4327872362</p>
     <p>abc@mail.com</p>
+    <hr>
+    <form action="mailto:info@home.com" method="post" enctype="text/plain">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" value=""><br><br>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" value=""><br><br>
+        <label for="message">Your Message:</label>
+        <textarea id="message" cols="20" rows="5" name="message"></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form> 
 </body>
-
-<form action="index.html" method="post">
-    <label for="#name">Your name:</label>
-    <input type="text" name="name" id="name">
-    <button type="submit">Submit</button>
-</form>
 
 </html>
