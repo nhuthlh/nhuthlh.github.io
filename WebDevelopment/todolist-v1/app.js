@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { request } = require("express");
+const date = require(__dirname + "/date.js");
 
 const app = express();
 
@@ -13,17 +14,7 @@ app.use(express.static("public"));
 
 
 app.get("/", function (req, res) {
-    var today = new Date();
-    var currentDay = today.getDay();
-    var options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    };
-
-    var day = today.toLocaleDateString("en-US", options);
-
+    var day = date.getDate();
     res.render("list", {
         listTitle: day,
         newListItems: items
@@ -55,5 +46,5 @@ app.get("/about", function(req, res) {
 
 
 app.listen(3000, function () {
-    console.log("Server is listening on port 3000");
+    console.log("SERVER is listening on port 3000");
 })
