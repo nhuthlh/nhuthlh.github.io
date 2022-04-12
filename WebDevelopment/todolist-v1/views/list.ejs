@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ToDo List</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <% if (day === "Sunday" || day === "Saturday") { %>
-            <h1 style="color:brown;">Today is <%= day%></h1>
-        <% } else { %>
-            <h1 style="color:aquamarine;">Today is <%= day%></h1>
+<%- include("header") -%>
+
+    <div class="box" id="heading">
+        <h1><%= listTitle%></h1>
+    </div>
+
+    <div class="box">
+
+        <% for (let x in newListItems) { %>
+        <div class="item">
+            <input type="checkbox">
+            <p><%= newListItems[x] %></p>
+        </div>
         <% } %>
-    </body>
-</html>
+
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New item" autocomplete="off">
+            <button type="submit" name="list" value=<%= listTitle%>>+</button>
+        </form>
+    </div>
+    
+<%- include("footer") -%>
